@@ -1,14 +1,8 @@
 import 'dotenv/config';
-import { defineConfig } from 'prisma/config';
 
-export default defineConfig({
+export default {
   schema: 'prisma/schema.prisma',
-  orm: {
-    adapter: {
-      provider: 'mysql',
-      url: process.env.DATABASE_URL!,
-    },
-    family: {},
-    target: {},
+  datasource: {
+    url: process.env.DATABASE_URL!,
   },
-});
+};
